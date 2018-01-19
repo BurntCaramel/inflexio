@@ -4,6 +4,14 @@ module Inflexio.Pluralize
         , pluralize
         )
 
+{-| Pluralize
+
+## Functions
+
+@docs singularize, pluralize
+
+-}
+
 import Regex exposing (Regex, regex)
 import Set exposing (Set)
 
@@ -194,11 +202,17 @@ replace_match regexes word =
                 word
 
 
+{-| Converts a word into its singular form
+e.g. birds -> bird; radii -> radius; sheep -> sheep
+-}
 singularize : String -> String
 singularize word =
     find_match singular word
 
 
+{-| Converts a word into its pluralized form
+e.g. bird -> birds; radius -> radii; sheep -> sheep
+-}
 pluralize : String -> String
 pluralize word =
     find_match plural word
